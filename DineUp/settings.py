@@ -15,10 +15,6 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv  # Added this line
 import dj_database_url
-from environs import Env
-
-env = Env()
-env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,10 +121,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-POSTGRES_LOCALLY  = True
-if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
-   DATABASES ['default'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
-
+DATABASES = {
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+}
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
