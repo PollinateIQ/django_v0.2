@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL', 'postgresql://postgres:MXbjQtcbkaWukfhWgDqTHsUnBHFzjnHs@autorack.proxy.rlwy.net:52807/railway'))
 }
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
