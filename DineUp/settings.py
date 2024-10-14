@@ -28,7 +28,7 @@ load_dotenv(BASE_DIR / '.env')  # Moved after BASE_DIR is defined
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-ua)3a8gx*ff+&72b9gkhti3s@wdg_i5+ruh5_*&fs0=w#83dwm')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'False'
 
 # Allowed hosts
 ALLOWED_HOSTS = ['backenddineup.up.railway.app', '127.0.0.1']
@@ -39,7 +39,7 @@ CSRF_TRUSTED_ORIGINS = ['https://backenddineup.up.railway.app', 'http://backendd
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin'
+    'jazzmin',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
