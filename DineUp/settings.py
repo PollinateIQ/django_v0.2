@@ -39,6 +39,7 @@ CSRF_TRUSTED_ORIGINS = ['https://backenddineup.up.railway.app', 'http://backendd
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin'
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -69,10 +70,8 @@ MIDDLEWARE = [
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # Next.js default port
-    'http://localhost:3001',  # If running multiple Next.js apps
-    'http://localhost:3002',
-    # Add more as needed
+    'https://dine-up-v1-4-rbuv.vercel.app',
+    'http://localhost:3000',
 ]
 # Not recommended for production
 
