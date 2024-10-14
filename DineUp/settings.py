@@ -31,8 +31,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-ua)3a8gx*ff+&72b9gkhti3s@w
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 # Allowed hosts
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['backenddineup.up.railway.app', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://backenddineup.up.railway.app', 'http://backenddineup.up.railway.app']
 
 
 
