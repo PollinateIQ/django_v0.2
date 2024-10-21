@@ -55,8 +55,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # Must be here
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -67,10 +67,41 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS Configuration
-CORS_ALLOWED_ORIGINS = [
-    'https://dine-up-v1-4-rbuv.vercel.app',
-    'http://localhost:3000',
+# CORS configuration settings
+# Development settings
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = False  # More secure than allowing all origins
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:5174",  # Your frontend development server
+    ]
+else:
+    # Production settings
+    CORS_ALLOWED_ORIGINS = [
+        "*",  # Add your production frontend URL
+    ]
+
+# Additional CORS settings you might need
+CORS_ALLOW_CREDENTIALS = True  # If you're using sessions/cookies
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 # Not recommended for production
 
