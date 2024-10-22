@@ -72,7 +72,7 @@ MIDDLEWARE = [
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = False  # More secure than allowing all origins
     CORS_ALLOWED_ORIGINS = [
-        "http://localhost:5174",  # Your frontend development server
+        'http://localhost:5174',  # Your frontend development server
     ]
 else:
     # Production settings
